@@ -3,12 +3,11 @@ package controller;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import dao.DaoImpl;
 import model.Card;
 import model.Player;
 import utils.Color;
-import utils.Constants;
+//import utils.Constants;
 import utils.Number;
 
 /**
@@ -48,7 +47,6 @@ public class Controller {
 		try {
 			// connect to data
 			dao.connect();
-			
 			// if login ok 
 			if (loginUser()) {
 				// check last game
@@ -57,8 +55,9 @@ public class Controller {
 				playTurn();
 				
 				
-			} else
+			} else {
 				System.out.println("User or password incorrect.");
+			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
